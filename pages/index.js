@@ -1,21 +1,11 @@
-import Link from 'next/link';
-import Head from 'next/head';
+import {Layout} from '../components/Layout';
 
 export default function() {
 	return (
-		<>
-			<Head>
-				<title>Home page</title>
-			</Head>
+		<Layout>
 			<h1>
 				Home page
 			</h1>
-			<Link href='/about'>
-					About
-			</Link>
-			<Link href='/layouts'>
-				Layouts
-			</Link>
-		</>
+		</Layout>
 	)
 }

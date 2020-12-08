@@ -1,18 +1,11 @@
-import Link from 'next/link';
-import Head from 'next/head';
+import {Layout} from '../components/Layout';
 
 export default function Layouts() {
 	return (
-		<>
-			<Head>
-				<title>Layouts</title>
-			</Head>
+		<Layout>
 			<h1>
 				Layouts
 			</h1>
-			<button>
-				<Link href='/'>Home</Link>
-			</button>
-		</>
+		</Layout>
 	)
 }
