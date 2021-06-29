@@ -12,7 +12,7 @@ export const NavItem = ({text, id}: Iprops) => {
 	}
 
 	return (
-		<span onClick={() => scrollToLink(id)}>
+		<span className={s.root} onClick={() => scrollToLink(id)}>
 			{text}
 		</span>
 	);

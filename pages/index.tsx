@@ -10,7 +10,7 @@ export default function Home() {
 				<title>Title</title>
 			</Head>
 			<header>
-				<nav>
+				<nav className={s.nav}>
 					<NavItem text={'Main'} />
 					<NavItem text={'About'} id={'about'}/>
 				</nav>

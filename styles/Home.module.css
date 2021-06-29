@@ -6,3 +6,10 @@
 	max-width: 1400px;
 	margin: 0 auto;
 }
+
+.nav {
+	margin: 20px auto;
+	max-width: 400px;
+	display: flex;
+	justify-content: space-between;
+}
