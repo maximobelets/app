@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import { About } from '../components/About/About'
-import s from '../styles/Home.module.css'
+import Head from 'next/head';
+import { About } from '../components/About/About';
+import { NavItem } from '../components/NavItem/NavItem';
+import s from '../styles/Home.module.css';
 
 export default function Home() {
 	return (
@@ -8,8 +9,14 @@ export default function Home() {
 			<Head>
 				<title>Title</title>
 			</Head>
+			<header>
+				<nav>
+					<NavItem text={'Main'} />
+					<NavItem text={'About'} id={'about'}/>
+				</nav>
+			</header>
 			<main className={s.container}>
-				<About title={'Test'} description={'Des'} />
+				<About title={'Test'} description={'Des'} id={'about'} />
 			</main>
 
 			<footer className={s.footer}>
