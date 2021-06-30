@@ -8,7 +8,8 @@ interface Iprops {
 export const NavItem = ({text, id}: Iprops) => {
 	const scrollToLink = (id: string) => {
 		const element = document.querySelector(`#${id}`);
-		element.scrollIntoView({block: "center", behavior: "smooth"});
+
+		id ? element.scrollIntoView({block: "center", behavior: "smooth"}) : null;
 	}
 
 	return (
