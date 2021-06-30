@@ -9,10 +9,10 @@ interface Iprops {
 export const About = ({title, description, id}: Iprops) => {
 	return (
 		<section className={s.root} id={id}>
-			<h2>
+			<h2 className={s.title}>
 				{title}
 			</h2>
-			<p>
+			<p className={s.des}>
 				{description}
 			</p>
 		</section>

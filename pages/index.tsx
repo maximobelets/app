@@ -16,7 +16,7 @@ export default function Home() {
 				</nav>
 			</header>
 			<main className={s.container}>
-				<About title={'Test'} description={'Des'} id={'about'} />
+				<About title={'About'} description={'Text'} id={'about'} />
 			</main>
 
 			<footer className={s.footer}>
