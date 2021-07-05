@@ -1,5 +1,4 @@
 import s from './About.module.css';
-
 interface Iprops {
 	title: string,
 	description: string,
