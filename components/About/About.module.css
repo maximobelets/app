@@ -1,5 +1,6 @@
 .root {
-	margin-top: 2000px;
+	min-height: 400px;
+	margin: 80px 0;
 }
 
 .title {

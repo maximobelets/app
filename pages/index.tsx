@@ -8,19 +8,20 @@ import s from '../styles/Home.module.css';
 
 export default function Home() {
 	return (
-		<div className={s.container}>
+		<>
 			<Head>
 				<title>Title</title>
 			</Head>
 			<header>
 				<nav className={s.nav}>
 					<NavItem text={'Main'} />
-					<NavItem text={'About'} id={'about'}/>
+					<NavItem text={'Catalog'} id={'catalog'} />
+					<NavItem text={'About'} id={'about'} />
 				</nav>
-				<Header title={'Test title'} des={'Test description'} />
+				<Header title={'Simply Site Header'} des={'Simply Site Header Description'} />
 			</header>
 			<main className={s.container}>
-				<section className={s.catalog}>
+				<section className={s.catalog} id={'catalog'} >
 					{testDataArray.map((item) => (
 							<Item 
 								image={item.image}
@@ -35,6 +36,6 @@ export default function Home() {
 			<footer className={s.footer}>
 				
 			</footer>
-		</div>
+		</>
 	)
 }

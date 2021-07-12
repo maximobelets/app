@@ -4,14 +4,14 @@
 	justify-content: center;
 	min-height: 500px;
 	flex-direction: column;
+	background-color: var(--main-color);
 }
 
 .title {
 	margin: 0;
-	font-size: 24px;
-	line-height: 20px;
+	font-size: 60px;
 }
 
 .des {
-
+	margin-top: 40px;
 }

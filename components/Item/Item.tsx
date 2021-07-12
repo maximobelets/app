@@ -7,7 +7,7 @@ interface Iprops {
 
 export const Item = ({image, title, description}: Iprops) => {
 	return (
-		<div>
+		<div className={s.root} >
 			<img src={image} className={s.img} />
 			<h4>
 				{title}
