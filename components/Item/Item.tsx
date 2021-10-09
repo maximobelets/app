@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import s from './Item.module.css';
 interface Iprops {
 	image: string,

@@ -5,6 +5,7 @@ import { Item } from '../components/Item/Item';
 import { Header } from '../components/Header/Header';
 import { testDataArray } from '../constants/constants';
 import s from '../styles/Home.module.css';
+import { Footer } from '../components/Footer';
 
 export default function Home() {
 	return (
@@ -32,9 +33,10 @@ export default function Home() {
 				</section>
 				<About title={'About'} description={'Text'} id={'about'} />
 			</main>
-
 			<footer className={s.footer}>
-				
+				<div className={s.container}>
+					<Footer title={'Footer'} des={'Site footer'} />
+				</div>
 			</footer>
 		</>
 	)

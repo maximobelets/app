@@ -19,3 +19,8 @@
 	justify-content: space-around;
 	flex-wrap: wrap;
 }
+
+.footer {
+	background-color: var(--fourth-color);
+	overflow: hidden;
+}
