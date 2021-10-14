@@ -7,9 +7,10 @@ import { testDataArray } from '../constants/constants';
 import s from '../styles/Home.module.css';
 import { Footer } from '../components/Footer';
 import { useSelector } from 'react-redux';
+import { RootState } from '../store/reducers';
 
 export default function Home() {
-	const state = useSelector(state => state);
+	const state = useSelector((state: RootState) => state.catalog);
 	console.log(state)
 
 	return (
