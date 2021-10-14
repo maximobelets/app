@@ -6,8 +6,12 @@ import { Header } from '../components/Header/Header';
 import { testDataArray } from '../constants/constants';
 import s from '../styles/Home.module.css';
 import { Footer } from '../components/Footer';
+import { useSelector } from 'react-redux';
 
 export default function Home() {
+	const state = useSelector(state => state);
+	console.log(state)
+
 	return (
 		<>
 			<Head>

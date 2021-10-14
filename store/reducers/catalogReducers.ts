@@ -1,4 +1,4 @@
-import { CatalogActions, CatalogState, FetchCatalogActionsTypes } from "../../types/types"
+import { CatalogActions, CatalogState, FetchCatalogActionsTypes } from "../../types/catalogReducer"
 
 const initialState: CatalogState = {
 	catalog: [],
