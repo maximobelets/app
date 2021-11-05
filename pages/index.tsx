@@ -6,11 +6,37 @@ import { Header } from '../components/Header/Header';
 import { testDataArray } from '../constants/constants';
 import s from '../styles/Home.module.css';
 import { Footer } from '../components/Footer';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/reducers';
+import { FetchCatalogActionsTypes } from '../types/catalogReducer';
+import { AddCatalogItem, fetchCatalog, fetchCatalogSuccsess } from '../store/actions/actionCreators';
+import { useEffect } from 'react';
+import { deleteCatalogItem, requestData } from '../store/actions/actions';
+import { title } from 'process';
 
 export default function Home() {
-	const state = useSelector((state: RootState) => state.catalog);
+	const state = useSelector((state: RootState) => state);
+	const catalog = useSelector((state: RootState) => state.catalog.catalog);
+
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(requestData());
+	}, []);
+
+	const buttonClick = (title) => {
+		console.log(title)
+		dispatch(deleteCatalogItem(title))
+	};
+
+	const addItem = (title, description) => {
+		dispatch(AddCatalogItem({
+			id: catalog.length + 1,
+			title: title,
+			description: description
+		}))
+	}
+
 	console.log(state)
 
 	return (
@@ -27,12 +53,17 @@ export default function Home() {
 				<Header title={'Simply Site Header'} des={'Simply Site Header Description'} />
 			</header>
 			<main className={s.container}>
+				<button onClick={() => addItem('TITLE', 'DESCRIPTION')}>
+					Add item
+				</button>
 				<section className={s.catalog} id={'catalog'} >
-					{testDataArray.map((item) => (
-							<Item 
+					{catalog.map((item) => (
+							<Item
+								key={item.id}
 								image={item.image}
 								title={item.title}
 								description={item.description}
+								handler={buttonClick}
 							/>
 					))}
 				</section>

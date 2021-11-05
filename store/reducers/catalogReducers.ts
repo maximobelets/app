@@ -1,4 +1,4 @@
-import { CatalogActions, CatalogState, FetchCatalogActionsTypes } from "../../types/catalogReducer"
+import { CatalogActions, CatalogState, CatalogActionsTypes } from "../../types/catalogReducer"
 
 const initialState: CatalogState = {
 	catalog: [],
@@ -8,19 +8,31 @@ const initialState: CatalogState = {
 
 export const catalogReducer = (state = initialState, action: CatalogActions): CatalogState => {
 	switch (action.type) {
-		case FetchCatalogActionsTypes.FETCH_CATALOG:
+		case CatalogActionsTypes.FETCH_CATALOG:
 			return {
 				catalog: [],
 				loading: true,
 				error: null
 			}
-		case FetchCatalogActionsTypes.FETCH_CATALOG_SUCCESS:
+		case CatalogActionsTypes.FETCH_CATALOG_SUCCESS:
 			return {
 				catalog: action.payload,
 				loading: false,
 				error: null
 			}
-		case FetchCatalogActionsTypes.FETCH_CATALOG_ERROR:
+		case CatalogActionsTypes.DELETE_CATALOG_ITEM:
+			return {
+				catalog: [...state.catalog.filter(item => item.title !== action.payload)],
+				loading: false,
+				error: null
+			}
+		case CatalogActionsTypes.ADD_CATALOG_ITEM:
+			return {
+				catalog: [...state.catalog, action.payload],
+				loading: false,
+				error: null
+			}
+		case CatalogActionsTypes.FETCH_CATALOG_ERROR:
 			return {
 				catalog: [],
 				loading: false,
